@@ -6,7 +6,7 @@ const About = () => <h2>About</h2>;
 const Users = () => <h2>Users</h2>;
 
 const AppRouter = () => (
-  <Router>
+  <Router basename={process.env.PUBLIC_URL}>
     <div>
       <nav>
         <ul>
@@ -22,9 +22,9 @@ const AppRouter = () => (
         </ul>
       </nav>
 
-      <Route path={`${process.env.PUBLIC_URL}/`} exact component={Index} />
-      <Route path={`${process.env.PUBLIC_URL}/about/`} component={About} />
-      <Route path={`${process.env.PUBLIC_URL}/users/`} component={Users} />
+      <Route path="/" exact component={Index} />
+      <Route path="/about/" component={About} />
+      <Route path="/users/" component={Users} />
     </div>
   </Router>
 );
